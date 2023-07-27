@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Forum.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ForumStoreContainer">
+    <EntitySet Name="UserSet" EntityType="Forum.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountSet" EntityType="Forum.Store.AccountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BranchSet" EntityType="Forum.Store.BranchSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SectionSet" EntityType="Forum.Store.SectionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageSet" EntityType="Forum.Store.MessageSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserAccount" Association="Forum.Store.UserAccount">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Account" EntitySet="AccountSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccountBranch" Association="Forum.Store.AccountBranch">
+      <End Role="Account" EntitySet="AccountSet" />
+      <End Role="Branch" EntitySet="BranchSet" />
+    </AssociationSet>
+    <AssociationSet Name="SectionBranch" Association="Forum.Store.SectionBranch">
+      <End Role="Section" EntitySet="SectionSet" />
+      <End Role="Branch" EntitySet="BranchSet" />
+    </AssociationSet>
+    <AssociationSet Name="BranchMessage" Association="Forum.Store.BranchMessage">
+      <End Role="Branch" EntitySet="BranchSet" />
+      <End Role="Message" EntitySet="MessageSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccountMessage" Association="Forum.Store.AccountMessage">
+      <End Role="Account" EntitySet="AccountSet" />
+      <End Role="Message" EntitySet="MessageSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="nvarchar(max)" Nullable="false" DefaultValue="User" />
+  </EntityType>
+  <EntityType Name="AccountSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" Nullable="true" />
+    <Property Name="Picture" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BranchSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccessLevel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="OwnerID" Type="int" Nullable="false" />
+    <Property Name="SectionID" Type="int" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="Section_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SectionSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AccessLevel" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="OwnerID" Type="int" Nullable="false" />
+    <Property Name="BranchID" Type="int" Nullable="false" />
+    <Property Name="Branch_ID" Type="int" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UserAccount">
+    <End Role="User" Type="Forum.Store.UserSet" Multiplicity="1" />
+    <End Role="Account" Type="Forum.Store.AccountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountBranch">
+    <End Role="Account" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="Branch" Type="Forum.Store.BranchSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectionBranch">
+    <End Role="Section" Type="Forum.Store.SectionSet" Multiplicity="1" />
+    <End Role="Branch" Type="Forum.Store.BranchSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Section_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BranchMessage">
+    <End Role="Branch" Type="Forum.Store.BranchSet" Multiplicity="1" />
+    <End Role="Message" Type="Forum.Store.MessageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Branch_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountMessage">
+    <End Role="Account" Type="Forum.Store.AccountSet" Multiplicity="1" />
+    <End Role="Message" Type="Forum.Store.MessageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

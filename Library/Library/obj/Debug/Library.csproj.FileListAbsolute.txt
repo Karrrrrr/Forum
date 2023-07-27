@@ -1,0 +1,12 @@
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\Library.dll.config
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\Library.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\Library.pdb
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\EntityFramework.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\EntityFramework.xml
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\obj\Debug\Library.csproj.CopyComplete
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\obj\Debug\Library.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\obj\Debug\Library.pdb
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache

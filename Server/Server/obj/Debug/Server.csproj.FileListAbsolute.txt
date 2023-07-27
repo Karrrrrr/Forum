@@ -1,0 +1,40 @@
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Server.exe.config
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Server.exe
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Server.pdb
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.SqlServer.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Library.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Library.pdb
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\Library.dll.config
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.xml
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.SqlServer.xml
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.exe
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.pdb
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\obj\Debug\Server.Form1.resources
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\ru\EntityFramework.resources.dll
+D:\Документы\Шарага\C\ОАиП\Лабораторная работа 8\Server\Server\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Server.exe.config
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Server.exe
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Server.pdb
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.SqlServer.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Library.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Library.pdb
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\Library.dll.config
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.xml
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\EntityFramework.SqlServer.xml
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\ru\EntityFramework.resources.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.Form1.resources
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.exe
+D:\Документы\Шарага\ПТПМ\Лабораторные работы\Лабораторная работа 1\Лабораторная работа 8\Server\Server\obj\Debug\Server.pdb

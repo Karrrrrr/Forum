@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Forum" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ForumContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserSet" EntityType="Forum.User" />
+    <EntitySet Name="AccountSet" EntityType="Forum.Account" />
+    <EntitySet Name="BranchSet" EntityType="Forum.Branch" />
+    <EntitySet Name="SectionSet" EntityType="Forum.Section" />
+    <EntitySet Name="MessageSet" EntityType="Forum.Message" />
+    <AssociationSet Name="UserAccount" Association="Forum.UserAccount">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Account" EntitySet="AccountSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccountBranch" Association="Forum.AccountBranch">
+      <End Role="Account" EntitySet="AccountSet" />
+      <End Role="Branch" EntitySet="BranchSet" />
+    </AssociationSet>
+    <AssociationSet Name="SectionBranch" Association="Forum.SectionBranch">
+      <End Role="Section" EntitySet="SectionSet" />
+      <End Role="Branch" EntitySet="BranchSet" />
+    </AssociationSet>
+    <AssociationSet Name="BranchMessage" Association="Forum.BranchMessage">
+      <End Role="Branch" EntitySet="BranchSet" />
+      <End Role="Message" EntitySet="MessageSet" />
+    </AssociationSet>
+    <AssociationSet Name="AccountMessage" Association="Forum.AccountMessage">
+      <End Role="Account" EntitySet="AccountSet" />
+      <End Role="Message" EntitySet="MessageSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" DefaultValue="User" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Forum.UserAccount" FromRole="User" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="Picture" Type="String" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Forum.UserAccount" FromRole="Account" ToRole="User" />
+    <NavigationProperty Name="Branch" Relationship="Forum.AccountBranch" FromRole="Account" ToRole="Branch" />
+    <NavigationProperty Name="Message" Relationship="Forum.AccountMessage" FromRole="Account" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccessLevel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OwnerID" Type="Int32" Nullable="false" />
+    <Property Name="SectionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Forum.AccountBranch" FromRole="Branch" ToRole="Account" />
+    <NavigationProperty Name="Section" Relationship="Forum.SectionBranch" FromRole="Branch" ToRole="Section" />
+    <NavigationProperty Name="Message" Relationship="Forum.BranchMessage" FromRole="Branch" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AccessLevel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Branch" Relationship="Forum.SectionBranch" FromRole="Section" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OwnerID" Type="Int32" Nullable="false" />
+    <Property Name="BranchID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="Forum.BranchMessage" FromRole="Message" ToRole="Branch" />
+    <NavigationProperty Name="Account" Relationship="Forum.AccountMessage" FromRole="Message" ToRole="Account" />
+  </EntityType>
+  <Association Name="UserAccount">
+    <End Type="Forum.User" Role="User" Multiplicity="1" />
+    <End Type="Forum.Account" Role="Account" Multiplicity="0..1" />
+  </Association>
+  <Association Name="AccountBranch">
+    <End Type="Forum.Account" Role="Account" Multiplicity="1" />
+    <End Type="Forum.Branch" Role="Branch" Multiplicity="*" />
+  </Association>
+  <Association Name="SectionBranch">
+    <End Type="Forum.Section" Role="Section" Multiplicity="1" />
+    <End Type="Forum.Branch" Role="Branch" Multiplicity="*" />
+  </Association>
+  <Association Name="BranchMessage">
+    <End Type="Forum.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="Forum.Message" Role="Message" Multiplicity="*" />
+  </Association>
+  <Association Name="AccountMessage">
+    <End Type="Forum.Account" Role="Account" Multiplicity="1" />
+    <End Type="Forum.Message" Role="Message" Multiplicity="*" />
+  </Association>
+</Schema>
